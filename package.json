@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-      "start": "node ./COMP4537/labs/3/server.js"
+      "start": "node ./comp4537/COMP4537/labs/3/server.js"
     },
     "dependencies": {
       
