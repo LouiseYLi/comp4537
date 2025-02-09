@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title id="title_search"></title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="grid_container">
+            <div id="page_title"><h1></h1></div>
+            <form id="form_search_dictionary">
+                <label id="word_label"></label><br>
+                <input type="text" id="word" name="word">
+                <input type="submit">
+                <div id="error_message_word"></div>
+                <label id="definition_label"></label><br>
+                <textarea id="search_definition" readonly></textarea><br>
+                <div id="submit_status"></div><br>
+            </form>
+        </div>
+        <script src="../lang/messages/en/user.js"></script>
+        <script src="../js/search.js"></script>
+    </body>
+</html>

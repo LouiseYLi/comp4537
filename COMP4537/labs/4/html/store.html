@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title id="title_store"></title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="grid_container">
+            <div id="page_title"><h1></h1></div>
+            <form id="form_add_to_dictionary">
+                <label id="word_label"></label><br>
+                <input type="text" id="word" name="word">
+                <div id="error_message_word"></div><br>
+                <label id="definition_label"></label><br>
+                <textarea type="text" id="store_definition" name="definition"></textarea>
+                <div id="error_message_definition"></div><br>
+                <input type="submit">
+                <div id="submit_status"></div><br>
+            </form>
+        </div>
+        <script src="../lang/messages/en/user.js"></script>
+        <script src="../js/store.js"></script>
+    </body>
+</html>
