@@ -74,7 +74,7 @@ class StorePage {
         }
 
         for (let i = 0; i < str.length; i++) {
-            if(!((/[a-zA-z' ']/).test(str[i]))) {
+            if(!((/[a-zA-z' \n]/).test(str[i]))) {
                 return false;
             }
         }
