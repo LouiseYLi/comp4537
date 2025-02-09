@@ -28,7 +28,7 @@ class SearchPage {
         }
 
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", `http://138.197.160.138:8080/api/dictionary/?word=${word}`);
+        xhr.open("GET", `https://seal-app-wgbcq.ondigitalocean.app/api/dictionary/?word=${word}`);
         xhr.send();
         xhr.onreadystatechange = () => {
             // if request was fully sent or error occurred
