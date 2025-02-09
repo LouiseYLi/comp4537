@@ -28,7 +28,7 @@ class SearchPage {
         }
 
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", `http://134.122.45.247:8080/api/dictionary/?word=${word}`);
+        xhr.open("GET", `https://134.122.45.247:8080/api/dictionary/?word=${word}`);
         xhr.send();
         xhr.onreadystatechange = () => {
             // if request was fully sent or error occurred

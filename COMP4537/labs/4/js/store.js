@@ -36,7 +36,7 @@ class StorePage {
         }
 
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://134.122.45.247:8080/api/dictionary");
+        xhr.open("POST", "https://134.122.45.247:8080/api/dictionary");
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhr.send(`?word=${word}&definition=${definition}`);
         xhr.onreadystatechange = () => {
