@@ -1,12 +1,12 @@
 class Server {
-    http = require('http');
+    https = require('https');
     url = require('url');
     fs = require('fs');
     endpoint_route = "/api/dictionary";
     Dictionary = require('./js/dictionary.js');
     constructor(port) {
       this.port = port;
-      this.server = this.http.createServer(this.handleRequest.bind(this));
+      this.server = this.https.createServer(this.handleRequest.bind(this));
       this.dictionary = new this.Dictionary();
       this.requests = 0;
     }
