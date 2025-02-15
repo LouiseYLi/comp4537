@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title id="Query"></title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="grid_container">
+            <div id="page_title"><h1></h1></div>
+            <form id="form_query">
+                <label id="query_label"></label><br>
+                <input type="text" id="query" name="query">
+                <input type="submit"><br>
+                <label class="response_label" id="query_response_label"></label><br>
+                <textarea class="response" id="query_response" readonly></textarea><br>
+            </form>
+            <div id="form_post">
+                <label id="post_label"></label><br>
+                <!-- <input type="text" id="query" name="query"> -->
+                <input id="post" type="submit"></br>
+                <textarea class="response" id="post_response" readonly></textarea>
+            </div>
+        </div>
+        <script src="../lang/en/user.js"></script>
+        <script src="../js/query.js"></script>
+    </body>
+</html>
