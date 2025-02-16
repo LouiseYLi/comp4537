@@ -55,7 +55,7 @@ class Client {
                 const response = xhr.responseText;
                 this.display_query(response);
             } else {
-                this.display_query("Error: " + xhr.status + xhr.statusText);
+                this.display_query("Error: " + xhr.status + " " + xhr.statusText);
             }
         };
 
