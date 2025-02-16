@@ -100,7 +100,7 @@ class Client {
               document.querySelector("#post_response").value = 'Error: ' + xhr.status + ' - ' + xhr.statusText;
             }
         };
-
+        console.log(data);
         xhr.send(JSON.stringify(data));
         console.log("post");
     }
