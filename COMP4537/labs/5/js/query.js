@@ -95,14 +95,13 @@ class Client {
         xhr.onload = () => {
             if (xhr.status === 200) {
               const response = xhr.responseText;
+              console.log(response);
               document.querySelector("#post_response").textContent = response;
             } else {
-              document.querySelector("#post_response").textContent = 'Error: ' + xhr.status + ' - ' + xhr.statusText;
+              document.querySelector("#post_response").textContent = 'Error: ' + xhr.status + ' ' + xhr.statusText;
             }
         };
         xhr.send(JSON.stringify(data));
-        console.log(data);
-        console.log("post");
     }
     display_query(msg) {
         document.querySelector("#query_response").textContent = msg;
