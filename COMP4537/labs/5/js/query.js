@@ -66,7 +66,7 @@ class Client {
         const xhr = new XMLHttpRequest();
         const query = document.querySelector("#query").value;
         // xhr.open("POST", "http://localhost:8080/sql/", true);
-        xhr.open("POST", "https://seal-app-wgbcq.ondigitalocean.app/sql/", true);
+        xhr.open("POST", "https://seal-app-wgbcq.ondigitalocean.app/sql", true);
         xhr.onload = () => {
             if (xhr.status === 200) {
                 const response = xhr.responseText;
@@ -80,8 +80,28 @@ class Client {
     }
     post_rows(e) {
         e.preventDefault();
-        document.querySelector("#post_response").textContent = "";
+        const xhr = new XMLHttpRequest();
+        
+        const data = [
+            ['Sara Brown', '1901-01-01'],
+            ['John Smith', '1941-01-01'],
+            ['Jack Ma', '1961-01-30'],
+            ['Elon Musk', '1999-01-01']
+        ];
 
+        xhr.open("POST", "https://seal-app-wgbcq.ondigitalocean.app/sql", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+              const response = JSON.parse(xhr.responseText);
+              document.getElementById('response').innerHTML = response.message;
+            } else {
+              document.getElementById('response').innerHTML = 'Error: ' + xhr.status + ' - ' + xhr.statusText;
+            }
+        };
+
+        xhr.send(JSON.stringify(data));
         console.log("post");
     }
     display_query(msg) {
