@@ -95,9 +95,9 @@ class Client {
         xhr.onload = () => {
             if (xhr.status === 200) {
               const response = JSON.parse(xhr.responseText);
-              document.getElementById('response').innerHTML = response.message;
+              document.querySelector("#post_response").value = response.message;
             } else {
-              document.getElementById('response').innerHTML = 'Error: ' + xhr.status + ' - ' + xhr.statusText;
+              document.querySelector("#post_response").value = 'Error: ' + xhr.status + ' - ' + xhr.statusText;
             }
         };
 
