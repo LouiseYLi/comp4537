@@ -4,3 +4,5 @@ const RESPONSE_LABEL = "Server Response:";
 const POST = "POST ROWS";
 const POST_BTN = "POST";
 
+const INVALID_QUERY = "Error: invalid query";
+
