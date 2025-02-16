@@ -72,7 +72,7 @@ class Client {
                 // const response = xhr.responseText;
                 this.display_query(SUCCESS_INSERT);
             } else {
-                this.display_query(ERROR_INSERT);
+                this.display_query(xhr.status + " " + ERROR_INSERT);
             }
         };
 
@@ -97,7 +97,7 @@ class Client {
             //   const response = xhr.responseText;
               document.querySelector("#post_response").textContent = SUCCESS_INSERT;
             } else {
-              document.querySelector("#post_response").textContent = ERROR_INSERT;
+              document.querySelector("#post_response").textContent = xhr.status + " " + ERROR_INSERT;
             }
         };
         xhr.send(JSON.stringify(data));
