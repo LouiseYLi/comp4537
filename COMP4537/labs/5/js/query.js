@@ -94,8 +94,8 @@ class Client {
 
         xhr.onload = () => {
             if (xhr.status === 200) {
-              const response = JSON.parse(xhr.responseText);
-              document.querySelector("#post_response").value = response.message;
+              const response = xhr.responseText;
+              document.querySelector("#post_response").value = response;
             } else {
               document.querySelector("#post_response").value = 'Error: ' + xhr.status + ' - ' + xhr.statusText;
             }
