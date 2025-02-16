@@ -27,7 +27,7 @@ class Client {
         console.log(document.querySelector("#query").value);
         const query = document.querySelector("#query").value;
         if (query.length <= 0) {
-            this.display_invalid_query();
+            this.display_query(BAD_REQUEST);
             return;
         }
 
@@ -35,8 +35,7 @@ class Client {
         if (operation === "SELECT") {
             this.get();
         } else if (operation === "INSERT") {
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST");  
+            this.post();
             
         } else {
             this.display_query(INVALID_QUERY);
@@ -47,9 +46,11 @@ class Client {
     get() {
         console.log("get");
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://localhost:8080/sql/?sql=" + query, true);
+        const query = document.querySelector("#query").value;
+        // xhr.open("GET", "http://localhost:8080/sql/sql?sql=" + query, true);
+        xhr.open("GET", "https://seal-app-wgbcq.ondigitalocean.app/sql/sql?sql=" + query, true);
 
-        xhr.onload() = () => {
+        xhr.onload = () => {
             if (xhr.status === 200) {
                 const response = xhr.responseText;
                 this.display_query(response);
@@ -60,7 +61,24 @@ class Client {
 
         xhr.send();
     }
-    post(e) {
+    post() {
+        console.log("post");
+        const xhr = new XMLHttpRequest();
+        const query = document.querySelector("#query").value;
+        // xhr.open("POST", "http://localhost:8080/sql/", true);
+        xhr.open("POST", "https://seal-app-wgbcq.ondigitalocean.app/sql/", true);
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                const response = xhr.responseText;
+                this.display_query(response);
+            } else {
+                this.display_query("Error: " + xhr.status + xhr.statusText);
+            }
+        };
+
+        xhr.send(query);
+    }
+    post_rows(e) {
         e.preventDefault();
         document.querySelector("#post_response").textContent = "";
 
