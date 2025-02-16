@@ -69,10 +69,10 @@ class Client {
         xhr.open("POST", "https://seal-app-wgbcq.ondigitalocean.app/sql", true);
         xhr.onload = () => {
             if (xhr.status === 200) {
-                const response = xhr.responseText;
-                this.display_query(response);
+                // const response = xhr.responseText;
+                this.display_query(SUCCESS_INSERT);
             } else {
-                this.display_query("Error: " + xhr.status + xhr.statusText);
+                this.display_query(ERROR_INSERT);
             }
         };
 
@@ -94,12 +94,10 @@ class Client {
 
         xhr.onload = () => {
             if (xhr.status === 200) {
-              const response = xhr.responseText;
-              console.log(response);
-              console.log(xhr);
-              document.querySelector("#post_response").textContent = response;
+            //   const response = xhr.responseText;
+              document.querySelector("#post_response").textContent = SUCCESS_INSERT;
             } else {
-              document.querySelector("#post_response").textContent = 'Error: ' + xhr.status + ' ' + xhr.statusText;
+              document.querySelector("#post_response").textContent = ERROR_INSERT;
             }
         };
         xhr.send(JSON.stringify(data));
