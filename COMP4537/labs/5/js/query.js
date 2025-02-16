@@ -96,6 +96,7 @@ class Client {
             if (xhr.status === 200) {
               const response = xhr.responseText;
               console.log(response);
+              console.log(xhr);
               document.querySelector("#post_response").textContent = response;
             } else {
               document.querySelector("#post_response").textContent = 'Error: ' + xhr.status + ' ' + xhr.statusText;
