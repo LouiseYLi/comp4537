@@ -17,7 +17,7 @@ class Client {
             this.query(e);
         })
         document.querySelector("#post_btn").addEventListener("click", (e) => {
-            this.post(e);
+            this.post_rows(e);
         })
     }
     query(e) {
@@ -100,8 +100,8 @@ class Client {
               document.querySelector("#post_response").value = 'Error: ' + xhr.status + ' - ' + xhr.statusText;
             }
         };
-        console.log(data);
         xhr.send(JSON.stringify(data));
+        console.log(data);
         console.log("post");
     }
     display_query(msg) {
